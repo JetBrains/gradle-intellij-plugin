@@ -1,0 +1,524 @@
+public final class org/jetbrains/intellij/BuildFeature : java/lang/Enum {
+	public static final field NO_SEARCHABLE_OPTIONS_WARNING Lorg/jetbrains/intellij/BuildFeature;
+	public static final field PAID_PLUGIN_SEARCHABLE_OPTIONS_WARNING Lorg/jetbrains/intellij/BuildFeature;
+	public static final field SELF_UPDATE_CHECK Lorg/jetbrains/intellij/BuildFeature;
+	public final fun getValue (Lorg/gradle/api/Project;)Z
+	public fun toString ()Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Lorg/jetbrains/intellij/BuildFeature;
+	public static fun values ()[Lorg/jetbrains/intellij/BuildFeature;
+}
+
+public abstract class org/jetbrains/intellij/IntelliJPlugin : org/gradle/api/Plugin {
+	public fun <init> ()V
+	public synthetic fun apply (Ljava/lang/Object;)V
+	public fun apply (Lorg/gradle/api/Project;)V
+}
+
+public final class org/jetbrains/intellij/IntelliJPluginConstants {
+	public static final field ANDROID_STUDIO_PRODUCTS_RELEASES_URL Ljava/lang/String;
+	public static final field ANNOTATIONS_DEPENDENCY_VERSION Ljava/lang/String;
+	public static final field BUILD_PLUGIN_TASK_NAME Ljava/lang/String;
+	public static final field BUILD_SEARCHABLE_OPTIONS_TASK_NAME Ljava/lang/String;
+	public static final field CACHE_REDIRECTOR Ljava/lang/String;
+	public static final field CLASSPATH_INDEX_CLEANUP_TASK_NAME Ljava/lang/String;
+	public static final field COMPILE_KOTLIN_TASK_NAME Ljava/lang/String;
+	public static final field DEFAULT_IDEA_VERSION Ljava/lang/String;
+	public static final field DEFAULT_INTELLIJ_PLUGINS_REPOSITORY Ljava/lang/String;
+	public static final field DEFAULT_INTELLIJ_REPOSITORY Ljava/lang/String;
+	public static final field DEFAULT_JBR_REPOSITORY Ljava/lang/String;
+	public static final field DEFAULT_SANDBOX Ljava/lang/String;
+	public static final field DOWNLOAD_ROBOT_SERVER_PLUGIN_TASK_NAME Ljava/lang/String;
+	public static final field EXTENSION_NAME Ljava/lang/String;
+	public static final field GITHUB_REPOSITORY Ljava/lang/String;
+	public static final field IDEA_CONFIGURATION_NAME Ljava/lang/String;
+	public static final field IDEA_PLUGINS_CONFIGURATION_NAME Ljava/lang/String;
+	public static final field IDEA_PRODUCTS_RELEASES_URL Ljava/lang/String;
+	public static final field INSTANCE Lorg/jetbrains/intellij/IntelliJPluginConstants;
+	public static final field INSTRUMENT_CODE_TASK_NAME Ljava/lang/String;
+	public static final field INSTRUMENT_TEST_CODE_TASK_NAME Ljava/lang/String;
+	public static final field INTELLIJ_DEFAULT_DEPENDENCIES_CONFIGURATION_NAME Ljava/lang/String;
+	public static final field INTELLIJ_DEPENDENCIES Ljava/lang/String;
+	public static final field JAR_SEARCHABLE_OPTIONS_TASK_NAME Ljava/lang/String;
+	public static final field JAVA_COMPILER_ANT_TASKS_MAVEN_METADATA Ljava/lang/String;
+	public static final field LIST_PRODUCTS_RELEASES_TASK_NAME Ljava/lang/String;
+	public static final field MARKETPLACE_HOST Ljava/lang/String;
+	public static final field MINIMAL_SUPPORTED_GRADLE_VERSION Ljava/lang/String;
+	public static final field PATCH_PLUGIN_XML_TASK_NAME Ljava/lang/String;
+	public static final field PERFORMANCE_PLUGIN_ID Ljava/lang/String;
+	public static final field PERFORMANCE_TEST_CONFIGURATION_NAME Ljava/lang/String;
+	public static final field PLATFORM_TYPE_ANDROID_STUDIO Ljava/lang/String;
+	public static final field PLATFORM_TYPE_CLION Ljava/lang/String;
+	public static final field PLATFORM_TYPE_GATEWAY Ljava/lang/String;
+	public static final field PLATFORM_TYPE_GOLAND Ljava/lang/String;
+	public static final field PLATFORM_TYPE_INTELLIJ_COMMUNITY Ljava/lang/String;
+	public static final field PLATFORM_TYPE_INTELLIJ_ULTIMATE Ljava/lang/String;
+	public static final field PLATFORM_TYPE_PHPSTORM Ljava/lang/String;
+	public static final field PLATFORM_TYPE_PYCHARM Ljava/lang/String;
+	public static final field PLATFORM_TYPE_PYCHARM_COMMUNITY Ljava/lang/String;
+	public static final field PLATFORM_TYPE_RIDER Ljava/lang/String;
+	public static final field PLUGIN_GROUP_NAME Ljava/lang/String;
+	public static final field PLUGIN_ID Ljava/lang/String;
+	public static final field PLUGIN_NAME Ljava/lang/String;
+	public static final field PLUGIN_PATH Ljava/lang/String;
+	public static final field PLUGIN_VERIFIER_REPOSITORY Ljava/lang/String;
+	public static final field PLUGIN_XML_DIR_NAME Ljava/lang/String;
+	public static final field POST_INSTRUMENT_CODE_TASK_NAME Ljava/lang/String;
+	public static final field POST_INSTRUMENT_TEST_CODE_TASK_NAME Ljava/lang/String;
+	public static final field PREPARE_SANDBOX_TASK_NAME Ljava/lang/String;
+	public static final field PREPARE_TESTING_SANDBOX_TASK_NAME Ljava/lang/String;
+	public static final field PREPARE_UI_TESTING_SANDBOX_TASK_NAME Ljava/lang/String;
+	public static final field PUBLISH_PLUGIN_TASK_NAME Ljava/lang/String;
+	public static final field RELEASE_SUFFIX_CUSTOM_SNAPSHOT Ljava/lang/String;
+	public static final field RELEASE_SUFFIX_EAP Ljava/lang/String;
+	public static final field RELEASE_SUFFIX_EAP_CANDIDATE Ljava/lang/String;
+	public static final field RELEASE_SUFFIX_SNAPSHOT Ljava/lang/String;
+	public static final field RELEASE_TYPE_NIGHTLY Ljava/lang/String;
+	public static final field RELEASE_TYPE_RELEASES Ljava/lang/String;
+	public static final field RELEASE_TYPE_SNAPSHOTS Ljava/lang/String;
+	public static final field RUN_IDE_FOR_UI_TESTS_TASK_NAME Ljava/lang/String;
+	public static final field RUN_IDE_PERFORMANCE_TEST_TASK_NAME Ljava/lang/String;
+	public static final field RUN_IDE_TASK_NAME Ljava/lang/String;
+	public static final field RUN_PLUGIN_VERIFIER_TASK_NAME Ljava/lang/String;
+	public static final field SEARCHABLE_OPTIONS_DIR_NAME Ljava/lang/String;
+	public static final field SEARCHABLE_OPTIONS_SUFFIX Ljava/lang/String;
+	public static final field SETUP_DEPENDENCIES_TASK_NAME Ljava/lang/String;
+	public static final field SETUP_INSTRUMENT_CODE_TASK_NAME Ljava/lang/String;
+	public static final field SIGN_PLUGIN_TASK_NAME Ljava/lang/String;
+	public static final field VERIFY_PLUGIN_CONFIGURATION_TASK_NAME Ljava/lang/String;
+	public static final field VERIFY_PLUGIN_TASK_NAME Ljava/lang/String;
+	public static final field VERSION_LATEST Ljava/lang/String;
+	public final fun getPLATFORM_TYPES ()Ljava/util/List;
+}
+
+public abstract class org/jetbrains/intellij/IntelliJPluginExtension {
+	public static final field Companion Lorg/jetbrains/intellij/IntelliJPluginExtension$Companion;
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun addPluginDependency (Lorg/jetbrains/intellij/dependency/PluginDependency;)V
+	public abstract fun getConfigureDefaultDependencies ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDownloadSources ()Lorg/gradle/api/provider/Property;
+	public abstract fun getExtraDependencies ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getIdeaDependency ()Lorg/gradle/api/provider/Property;
+	public final fun getIdeaDependency (Lorg/gradle/api/Project;)Lorg/jetbrains/intellij/dependency/IdeaDependency;
+	public abstract fun getIdeaDependencyCachePath ()Lorg/gradle/api/provider/Property;
+	public abstract fun getInstrumentCode ()Lorg/gradle/api/provider/Property;
+	public abstract fun getIntellijRepository ()Lorg/gradle/api/provider/Property;
+	public abstract fun getJreRepository ()Lorg/gradle/api/provider/Property;
+	public abstract fun getLocalPath ()Lorg/gradle/api/provider/Property;
+	public abstract fun getLocalSourcesPath ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPluginDependencies ()Lorg/gradle/api/provider/ListProperty;
+	public final fun getPluginDependenciesList (Lorg/gradle/api/Project;)Ljava/util/Set;
+	public abstract fun getPluginName ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPlugins ()Lorg/gradle/api/provider/ListProperty;
+	public final fun getPluginsRepositories ()Ljava/util/List;
+	public final fun getPluginsRepositories ()Lorg/jetbrains/intellij/dependency/PluginsRepositoryConfiguration;
+	public abstract fun getSameSinceUntilBuild ()Lorg/gradle/api/provider/Property;
+	public abstract fun getSandboxDir ()Lorg/gradle/api/provider/Property;
+	public abstract fun getType ()Lorg/gradle/api/provider/Property;
+	public final fun getUnresolvedPluginDependencies ()Ljava/util/Set;
+	public abstract fun getUpdateSinceUntilBuild ()Lorg/gradle/api/provider/Property;
+	public abstract fun getVersion ()Lorg/gradle/api/provider/Property;
+	public final fun getVersionNumber ()Ljava/lang/String;
+	public final fun getVersionType ()Ljava/lang/String;
+	public final fun pluginsRepositories (Lorg/gradle/api/Action;)V
+}
+
+public final class org/jetbrains/intellij/IntelliJPluginExtension$Companion {
+}
+
+public final class org/jetbrains/intellij/dependency/BuiltinPluginsRegistry : java/io/Serializable {
+	public static final field Companion Lorg/jetbrains/intellij/dependency/BuiltinPluginsRegistry$Companion;
+	public static final field version I
+	public fun <init> (Ljava/io/File;Ljava/lang/String;)V
+	public final fun add (Ljava/io/File;)V
+	public final fun collectBuiltinDependencies (Ljava/util/Collection;)Ljava/util/Collection;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun findPlugin (Ljava/lang/String;)Ljava/io/File;
+	public fun hashCode ()I
+}
+
+public final class org/jetbrains/intellij/dependency/BuiltinPluginsRegistry$Companion {
+	public final fun fromDirectory (Ljava/io/File;Ljava/lang/String;)Lorg/jetbrains/intellij/dependency/BuiltinPluginsRegistry;
+}
+
+public class org/jetbrains/intellij/dependency/IdeaDependency : java/io/Serializable {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/io/File;Ljava/io/File;ZLorg/jetbrains/intellij/dependency/BuiltinPluginsRegistry;Ljava/util/Collection;)V
+	protected fun collectJarFiles ()Ljava/util/Collection;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBuildNumber ()Ljava/lang/String;
+	public final fun getClasses ()Ljava/io/File;
+	public final fun getExtraDependencies ()Ljava/util/Collection;
+	public final fun getFqn ()Ljava/lang/String;
+	public fun getIvyRepositoryDirectory ()Ljava/io/File;
+	public final fun getJarFiles ()Ljava/util/Collection;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getPluginsRegistry ()Lorg/jetbrains/intellij/dependency/BuiltinPluginsRegistry;
+	public final fun getSourceZipFiles ()Ljava/util/Collection;
+	public final fun getSources ()Ljava/io/File;
+	public final fun getVersion ()Ljava/lang/String;
+	public final fun getWithKotlin ()Z
+	public fun hashCode ()I
+}
+
+public final class org/jetbrains/intellij/dependency/IdeaExtraDependency {
+	public fun <init> (Ljava/lang/String;Ljava/io/File;)V
+	public fun <init> (Ljava/lang/String;Ljava/util/Set;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/util/Set;
+	public final fun copy (Ljava/lang/String;Ljava/util/Set;)Lorg/jetbrains/intellij/dependency/IdeaExtraDependency;
+	public static synthetic fun copy$default (Lorg/jetbrains/intellij/dependency/IdeaExtraDependency;Ljava/lang/String;Ljava/util/Set;ILjava/lang/Object;)Lorg/jetbrains/intellij/dependency/IdeaExtraDependency;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getJarFiles ()Ljava/util/Set;
+	public final fun getName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/jetbrains/intellij/dependency/MavenRepositoryPlugin : org/jetbrains/intellij/dependency/MavenRepository {
+	public fun <init> (Ljava/lang/String;)V
+	public fun getResolvedDependency ()Z
+	public fun postResolve (Lorg/gradle/api/Project;Ljava/lang/String;)V
+	public fun resolve (Lorg/gradle/api/Project;Lorg/jetbrains/intellij/dependency/PluginDependencyNotation;Ljava/lang/String;)Ljava/io/File;
+	public fun setResolvedDependency (Z)V
+}
+
+public final class org/jetbrains/intellij/dependency/MavenRepositoryPluginByAction : org/jetbrains/intellij/dependency/MavenRepository {
+	public fun <init> (Lorg/gradle/api/Action;)V
+	public fun getResolvedDependency ()Z
+	public fun postResolve (Lorg/gradle/api/Project;Ljava/lang/String;)V
+	public fun resolve (Lorg/gradle/api/Project;Lorg/jetbrains/intellij/dependency/PluginDependencyNotation;Ljava/lang/String;)Ljava/io/File;
+	public fun setResolvedDependency (Z)V
+}
+
+public abstract interface class org/jetbrains/intellij/dependency/PluginDependency : java/io/Serializable {
+	public static final field Companion Lorg/jetbrains/intellij/dependency/PluginDependency$Companion;
+	public abstract fun getArtifact ()Ljava/io/File;
+	public abstract fun getBuiltin ()Z
+	public abstract fun getChannel ()Ljava/lang/String;
+	public abstract fun getClassesDirectory ()Ljava/io/File;
+	public fun getFqn ()Ljava/lang/String;
+	public abstract fun getId ()Ljava/lang/String;
+	public abstract fun getJarFiles ()Ljava/util/Collection;
+	public abstract fun getMaven ()Z
+	public abstract fun getMetaInfDirectory ()Ljava/io/File;
+	public abstract fun getNotation ()Lorg/jetbrains/intellij/dependency/PluginDependencyNotation;
+	public abstract fun getPlatformPluginId ()Ljava/lang/String;
+	public abstract fun getSourceJarFiles ()Ljava/util/Collection;
+	public abstract fun getVersion ()Ljava/lang/String;
+	public abstract fun isCompatible (Lcom/jetbrains/plugin/structure/intellij/version/IdeVersion;)Z
+}
+
+public final class org/jetbrains/intellij/dependency/PluginDependency$Companion {
+}
+
+public final class org/jetbrains/intellij/dependency/PluginDependencyNotation : java/io/Serializable {
+	public static final field Companion Lorg/jetbrains/intellij/dependency/PluginDependencyNotation$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getChannel ()Ljava/lang/String;
+	public final fun getId ()Ljava/lang/String;
+	public final fun getVersion ()Ljava/lang/String;
+	public fun hashCode ()I
+	public final fun toDependency (Lorg/gradle/api/Project;)Lorg/gradle/api/artifacts/Dependency;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class org/jetbrains/intellij/dependency/PluginDependencyNotation$Companion {
+	public final fun parsePluginDependencyString (Ljava/lang/String;)Lorg/jetbrains/intellij/dependency/PluginDependencyNotation;
+}
+
+public abstract interface class org/jetbrains/intellij/dependency/PluginsRepository {
+	public abstract fun postResolve (Lorg/gradle/api/Project;Ljava/lang/String;)V
+	public abstract fun resolve (Lorg/gradle/api/Project;Lorg/jetbrains/intellij/dependency/PluginDependencyNotation;Ljava/lang/String;)Ljava/io/File;
+}
+
+public abstract class org/jetbrains/intellij/dependency/PluginsRepositoryConfiguration {
+	public fun <init> ()V
+	public final fun custom (Ljava/lang/String;)V
+	public final fun getRepositories ()Ljava/util/List;
+	public final fun marketplace ()V
+	public final fun maven (Ljava/lang/String;)V
+	public final fun maven (Lorg/gradle/api/Action;)V
+}
+
+public final class org/jetbrains/intellij/performanceTest/ProfilerName : java/lang/Enum {
+	public static final field ASYNC Lorg/jetbrains/intellij/performanceTest/ProfilerName;
+	public static final field YOURKIT Lorg/jetbrains/intellij/performanceTest/ProfilerName;
+	public static fun valueOf (Ljava/lang/String;)Lorg/jetbrains/intellij/performanceTest/ProfilerName;
+	public static fun values ()[Lorg/jetbrains/intellij/performanceTest/ProfilerName;
+}
+
+public abstract class org/jetbrains/intellij/tasks/BuildSearchableOptionsTask : org/jetbrains/intellij/tasks/RunIdeBase {
+	public fun <init> ()V
+	public fun exec ()V
+	public abstract fun getOutputDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getShowPaidPluginWarning ()Lorg/gradle/api/provider/Property;
+	public fun setArgs (Ljava/lang/Iterable;)Lorg/gradle/api/tasks/JavaExec;
+	public synthetic fun setArgs (Ljava/lang/Iterable;)Lorg/gradle/process/JavaExecSpec;
+	public fun setArgs (Ljava/util/List;)Lorg/gradle/api/tasks/JavaExec;
+	public synthetic fun setArgs (Ljava/util/List;)Lorg/gradle/process/JavaExecSpec;
+}
+
+public abstract class org/jetbrains/intellij/tasks/ClasspathIndexCleanupTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public final fun classpathIndexCleanup ()V
+	public abstract fun getClasspathIndexFiles ()Lorg/gradle/api/file/ConfigurableFileCollection;
+}
+
+public abstract class org/jetbrains/intellij/tasks/DownloadRobotServerPluginTask : org/gradle/api/DefaultTask {
+	public static final field Companion Lorg/jetbrains/intellij/tasks/DownloadRobotServerPluginTask$Companion;
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;)V
+	public final fun downloadPlugin ()V
+	public abstract fun getOutputDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getPluginArchive ()Lorg/gradle/api/provider/Property;
+	public abstract fun getVersion ()Lorg/gradle/api/provider/Property;
+}
+
+public final class org/jetbrains/intellij/tasks/DownloadRobotServerPluginTask$Companion {
+	public final fun resolveLatestVersion ()Ljava/lang/String;
+}
+
+public abstract class org/jetbrains/intellij/tasks/IntelliJInstrumentCodeTask : org/gradle/api/DefaultTask {
+	public static final field Companion Lorg/jetbrains/intellij/tasks/IntelliJInstrumentCodeTask$Companion;
+	public static final field FILTER_ANNOTATION_REGEXP_CLASS Ljava/lang/String;
+	public static final field LOADER_REF Ljava/lang/String;
+	public fun <init> ()V
+	public abstract fun getClassesDirs ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getCompilerClassPathFromMaven ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getCompilerVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getFormsDirs ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getIdeaDependency ()Lorg/gradle/api/provider/Property;
+	public abstract fun getJavac2 ()Lorg/gradle/api/provider/Property;
+	public abstract fun getOutputDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getSourceDirs ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public abstract fun getSourceSetCompileClasspath ()Lorg/gradle/api/file/ConfigurableFileCollection;
+	public final fun instrumentClasses (Lorg/gradle/work/InputChanges;)V
+}
+
+public final class org/jetbrains/intellij/tasks/IntelliJInstrumentCodeTask$Companion {
+}
+
+public abstract class org/jetbrains/intellij/tasks/JarSearchableOptionsTask : org/gradle/jvm/tasks/Jar {
+	public fun <init> ()V
+	protected fun copy ()V
+	public abstract fun getNoSearchableOptionsWarning ()Lorg/gradle/api/provider/Property;
+	public abstract fun getOutputDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getPluginName ()Lorg/gradle/api/provider/Property;
+	public abstract fun getSandboxDir ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class org/jetbrains/intellij/tasks/ListProductsReleasesTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getAndroidStudioUpdatePath ()Lorg/gradle/api/provider/Property;
+	public abstract fun getOutputFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getReleaseChannels ()Lorg/gradle/api/provider/SetProperty;
+	public abstract fun getSinceBuild ()Lorg/gradle/api/provider/Property;
+	public abstract fun getSinceVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getTypes ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getUntilBuild ()Lorg/gradle/api/provider/Property;
+	public abstract fun getUntilVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getUpdatePaths ()Lorg/gradle/api/provider/ListProperty;
+	public final fun list ()V
+}
+
+public final class org/jetbrains/intellij/tasks/ListProductsReleasesTask$Channel : java/lang/Enum {
+	public static final field BETA Lorg/jetbrains/intellij/tasks/ListProductsReleasesTask$Channel;
+	public static final field CANARY Lorg/jetbrains/intellij/tasks/ListProductsReleasesTask$Channel;
+	public static final field EAP Lorg/jetbrains/intellij/tasks/ListProductsReleasesTask$Channel;
+	public static final field MILESTONE Lorg/jetbrains/intellij/tasks/ListProductsReleasesTask$Channel;
+	public static final field PATCH Lorg/jetbrains/intellij/tasks/ListProductsReleasesTask$Channel;
+	public static final field RC Lorg/jetbrains/intellij/tasks/ListProductsReleasesTask$Channel;
+	public static final field RELEASE Lorg/jetbrains/intellij/tasks/ListProductsReleasesTask$Channel;
+	public static fun valueOf (Ljava/lang/String;)Lorg/jetbrains/intellij/tasks/ListProductsReleasesTask$Channel;
+	public static fun values ()[Lorg/jetbrains/intellij/tasks/ListProductsReleasesTask$Channel;
+}
+
+public abstract class org/jetbrains/intellij/tasks/PatchPluginXmlTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getChangeNotes ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDestinationDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getOutputFiles ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getPluginDescription ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPluginId ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPluginXmlFiles ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getSinceBuild ()Lorg/gradle/api/provider/Property;
+	public abstract fun getUntilBuild ()Lorg/gradle/api/provider/Property;
+	public abstract fun getVersion ()Lorg/gradle/api/provider/Property;
+	public final fun patchPluginXmlFiles ()V
+}
+
+public abstract class org/jetbrains/intellij/tasks/PrepareSandboxTask : org/gradle/api/tasks/Sync {
+	public fun <init> ()V
+	public synthetic fun configure (Lgroovy/lang/Closure;)Ljava/lang/Object;
+	public fun configure (Lgroovy/lang/Closure;)Lorg/gradle/api/Task;
+	protected fun copy ()V
+	public abstract fun getConfigDir ()Lorg/gradle/api/provider/Property;
+	public abstract fun getDefaultDestinationDir ()Lorg/gradle/api/provider/Property;
+	public fun getDestinationDir ()Ljava/io/File;
+	public abstract fun getLibrariesToIgnore ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getPluginDependencies ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getPluginJar ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getPluginName ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class org/jetbrains/intellij/tasks/PublishPluginTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getChannels ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getDistributionFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getHost ()Lorg/gradle/api/provider/Property;
+	public abstract fun getToken ()Lorg/gradle/api/provider/Property;
+	public abstract fun getToolboxEnterprise ()Lorg/gradle/api/provider/Property;
+	public final fun publishPlugin ()V
+}
+
+public abstract class org/jetbrains/intellij/tasks/RunIdeBase : org/gradle/api/tasks/JavaExec {
+	public static final field Companion Lorg/jetbrains/intellij/tasks/RunIdeBase$Companion;
+	public fun <init> (Z)V
+	protected fun collectJvmArgs ()Ljava/util/List;
+	public fun exec ()V
+	public abstract fun getAutoReloadPlugins ()Lorg/gradle/api/provider/Property;
+	public abstract fun getConfigDir ()Lorg/gradle/api/provider/Property;
+	public abstract fun getIdeDir ()Lorg/gradle/api/provider/Property;
+	public abstract fun getJbrVariant ()Lorg/gradle/api/provider/Property;
+	public abstract fun getJbrVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPluginsDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public abstract fun getProjectExecutable ()Lorg/gradle/api/provider/Property;
+	public abstract fun getProjectWorkingDir ()Lorg/gradle/api/provider/Property;
+	public abstract fun getRequiredPluginIds ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getSystemDir ()Lorg/gradle/api/provider/Property;
+}
+
+public final class org/jetbrains/intellij/tasks/RunIdeBase$Companion {
+}
+
+public abstract class org/jetbrains/intellij/tasks/RunIdeForUiTestTask : org/jetbrains/intellij/tasks/RunIdeBase {
+	public fun <init> ()V
+}
+
+public abstract class org/jetbrains/intellij/tasks/RunIdePerformanceTestTask : org/jetbrains/intellij/tasks/RunIdeBase {
+	public fun <init> ()V
+	protected fun collectJvmArgs ()Ljava/util/List;
+	public fun exec ()V
+	public abstract fun getArtifactsDir ()Lorg/gradle/api/provider/Property;
+	public abstract fun getProfilerName ()Lorg/gradle/api/provider/Property;
+	public abstract fun getTestDataDir ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class org/jetbrains/intellij/tasks/RunIdeTask : org/jetbrains/intellij/tasks/RunIdeBase {
+	public fun <init> ()V
+}
+
+public abstract class org/jetbrains/intellij/tasks/RunPluginVerifierTask : org/gradle/api/DefaultTask {
+	public static final field Companion Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$Companion;
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;Lorg/gradle/process/ExecOperations;Lorg/gradle/api/provider/ProviderFactory;)V
+	public abstract fun getDistributionFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getDownloadDir ()Lorg/gradle/api/provider/Property;
+	public abstract fun getExternalPrefixes ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getFailureLevel ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getIdeDir ()Lorg/gradle/api/provider/Property;
+	public abstract fun getIdeVersions ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getIdes ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getJbrVariant ()Lorg/gradle/api/provider/Property;
+	public abstract fun getJbrVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getJreRepository ()Lorg/gradle/api/provider/Property;
+	public abstract fun getLocalPaths ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getOffline ()Lorg/gradle/api/provider/Property;
+	public abstract fun getProductsReleasesFile ()Lorg/gradle/api/provider/Property;
+	public abstract fun getRuntimeDir ()Lorg/gradle/api/provider/Property;
+	public abstract fun getSubsystemsToCheck ()Lorg/gradle/api/provider/Property;
+	public abstract fun getTeamCityOutputFormat ()Lorg/gradle/api/provider/Property;
+	public abstract fun getVerificationReportsDir ()Lorg/gradle/api/provider/Property;
+	public abstract fun getVerifierPath ()Lorg/gradle/api/provider/Property;
+	public abstract fun getVerifierVersion ()Lorg/gradle/api/provider/Property;
+	public final fun runPluginVerifier ()V
+}
+
+public final class org/jetbrains/intellij/tasks/RunPluginVerifierTask$Companion {
+	public final fun resolveLatestVersion ()Ljava/lang/String;
+}
+
+public final class org/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel : java/lang/Enum {
+	public static final field COMPATIBILITY_PROBLEMS Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel;
+	public static final field COMPATIBILITY_WARNINGS Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel;
+	public static final field Companion Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel$Companion;
+	public static final field DEPRECATED_API_USAGES Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel;
+	public static final field EXPERIMENTAL_API_USAGES Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel;
+	public static final field INTERNAL_API_USAGES Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel;
+	public static final field INVALID_PLUGIN Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel;
+	public static final field MISSING_DEPENDENCIES Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel;
+	public static final field NON_EXTENDABLE_API_USAGES Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel;
+	public static final field NOT_DYNAMIC Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel;
+	public static final field OVERRIDE_ONLY_API_USAGES Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel;
+	public static final field PLUGIN_STRUCTURE_WARNINGS Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel;
+	public static final field SCHEDULED_FOR_REMOVAL_API_USAGES Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel;
+	public final fun getMessage ()Ljava/lang/String;
+	public final fun getSectionHeading ()Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel;
+	public static fun values ()[Lorg/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel;
+}
+
+public final class org/jetbrains/intellij/tasks/RunPluginVerifierTask$FailureLevel$Companion {
+	public final fun getALL ()Ljava/util/EnumSet;
+	public final fun getNONE ()Ljava/util/EnumSet;
+}
+
+public abstract class org/jetbrains/intellij/tasks/SetupDependenciesTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getIdea ()Lorg/gradle/api/provider/Property;
+}
+
+public abstract class org/jetbrains/intellij/tasks/SetupInstrumentCodeTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getInstrumentationEnabled ()Lorg/gradle/api/provider/Property;
+	public abstract fun getInstrumentedDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public final fun setupInstrumentCode ()V
+}
+
+public abstract class org/jetbrains/intellij/tasks/SignPluginTask : org/gradle/api/DefaultTask {
+	public static final field Companion Lorg/jetbrains/intellij/tasks/SignPluginTask$Companion;
+	public fun <init> (Lorg/gradle/api/model/ObjectFactory;Lorg/gradle/process/ExecOperations;)V
+	public abstract fun getCertificateChain ()Lorg/gradle/api/provider/Property;
+	public abstract fun getCertificateChainFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getCliPath ()Lorg/gradle/api/provider/Property;
+	public abstract fun getCliVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getInputArchiveFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getKeyStore ()Lorg/gradle/api/provider/Property;
+	public abstract fun getKeyStoreKeyAlias ()Lorg/gradle/api/provider/Property;
+	public abstract fun getKeyStorePassword ()Lorg/gradle/api/provider/Property;
+	public abstract fun getKeyStoreProviderName ()Lorg/gradle/api/provider/Property;
+	public abstract fun getKeyStoreType ()Lorg/gradle/api/provider/Property;
+	public abstract fun getOutputArchiveFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public abstract fun getPassword ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPrivateKey ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPrivateKeyFile ()Lorg/gradle/api/file/RegularFileProperty;
+	public final fun signPlugin ()V
+}
+
+public final class org/jetbrains/intellij/tasks/SignPluginTask$Companion {
+	public final fun resolveLatestVersion ()Ljava/lang/String;
+}
+
+public abstract class org/jetbrains/intellij/tasks/VerifyPluginConfigurationTask : org/gradle/api/DefaultTask {
+	public fun <init> (Lorg/gradle/api/provider/ProviderFactory;)V
+	public abstract fun getKotlinApiVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getKotlinJvmTarget ()Lorg/gradle/api/provider/Property;
+	public abstract fun getKotlinLanguageVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getKotlinPluginAvailable ()Lorg/gradle/api/provider/Property;
+	public abstract fun getKotlinStdlibDefaultDependency ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPlatformBuild ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPlatformVersion ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPluginVerifierDownloadDir ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPluginXmlFiles ()Lorg/gradle/api/provider/ListProperty;
+	public abstract fun getSourceCompatibility ()Lorg/gradle/api/provider/Property;
+	public abstract fun getTargetCompatibility ()Lorg/gradle/api/provider/Property;
+	public final fun verifyPlugin ()V
+}
+
+public abstract class org/jetbrains/intellij/tasks/VerifyPluginTask : org/gradle/api/DefaultTask {
+	public fun <init> ()V
+	public abstract fun getIgnoreFailures ()Lorg/gradle/api/provider/Property;
+	public abstract fun getIgnoreUnacceptableWarnings ()Lorg/gradle/api/provider/Property;
+	public abstract fun getIgnoreWarnings ()Lorg/gradle/api/provider/Property;
+	public abstract fun getPluginDir ()Lorg/gradle/api/file/DirectoryProperty;
+	public final fun verifyPlugin ()V
+}
+
