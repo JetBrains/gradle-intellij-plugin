@@ -31,6 +31,7 @@ object IntelliJPluginConstants {
     const val PRINT_PRODUCTS_RELEASES_TASK_NAME = "printProductsReleases"
     const val PUBLISH_PLUGIN_TASK_NAME = "publishPlugin"
     const val RUN_IDE_TASK_NAME = "runIde"
+    const val RUN_IDE_IN_SPLIT_MODE_TASK_NAME = "runIdeInSplitMode"
     const val RUN_IDE_FOR_UI_TESTS_TASK_NAME = "runIdeForUiTests"
     const val RUN_IDE_PERFORMANCE_TEST_TASK_NAME = "runIdePerformanceTest"
     const val RUN_PLUGIN_VERIFIER_TASK_NAME = "runPluginVerifier"
@@ -63,6 +64,7 @@ object IntelliJPluginConstants {
         PRINT_PRODUCTS_RELEASES_TASK_NAME,
         PUBLISH_PLUGIN_TASK_NAME,
         RUN_IDE_TASK_NAME,
+        RUN_IDE_IN_SPLIT_MODE_TASK_NAME,
         RUN_IDE_FOR_UI_TESTS_TASK_NAME,
         RUN_IDE_PERFORMANCE_TEST_TASK_NAME,
         RUN_PLUGIN_VERIFIER_TASK_NAME,

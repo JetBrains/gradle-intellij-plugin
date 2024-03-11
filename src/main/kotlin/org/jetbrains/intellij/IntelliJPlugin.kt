@@ -96,6 +96,7 @@ import org.jetbrains.intellij.IntelliJPluginConstants.RELEASE_SUFFIX_EAP_CANDIDA
 import org.jetbrains.intellij.IntelliJPluginConstants.RELEASE_SUFFIX_SNAPSHOT
 import org.jetbrains.intellij.IntelliJPluginConstants.RELEASE_TYPE_RELEASES
 import org.jetbrains.intellij.IntelliJPluginConstants.RUN_IDE_FOR_UI_TESTS_TASK_NAME
+import org.jetbrains.intellij.IntelliJPluginConstants.RUN_IDE_IN_SPLIT_MODE_TASK_NAME
 import org.jetbrains.intellij.IntelliJPluginConstants.RUN_IDE_PERFORMANCE_TEST_TASK_NAME
 import org.jetbrains.intellij.IntelliJPluginConstants.RUN_IDE_TASK_NAME
 import org.jetbrains.intellij.IntelliJPluginConstants.RUN_PLUGIN_VERIFIER_TASK_NAME
@@ -131,6 +132,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.io.path.exists
+import kotlin.io.path.pathString
 
 abstract class IntelliJPlugin : Plugin<Project> {
 
@@ -229,6 +231,7 @@ abstract class IntelliJPlugin : Plugin<Project> {
         configureListBundledPluginsTask(project, ideaDependencyProvider)
         configurePluginVerificationTask(project)
         configureRunIdeTask(project)
+        configureRunIdeInSplitModeTask(project)
         configureRunIdePerformanceTestTask(project, extension)
         configureRunIdeForUiTestsTask(project)
         configureBuildSearchableOptionsTask(project)
@@ -859,6 +862,35 @@ abstract class IntelliJPlugin : Plugin<Project> {
         project.tasks.withType<RunIdeTask> {
             dependsOn(PREPARE_SANDBOX_TASK_NAME)
             finalizedBy(CLASSPATH_INDEX_CLEANUP_TASK_NAME)
+        }
+    }
+    
+    private fun configureRunIdeInSplitModeTask(project: Project) {
+        info(context, "Configuring run IDE in splitMode task")
+
+        project.tasks.register<RunIdeInSplitModeTask>(RUN_IDE_IN_SPLIT_MODE_TASK_NAME)
+        project.tasks.withType<RunIdeInSplitModeTask> {
+            dependsOn(PREPARE_SANDBOX_TASK_NAME)
+            finalizedBy(CLASSPATH_INDEX_CLEANUP_TASK_NAME)
+            setArgs(listOf("splitMode"))
+            doFirst {
+                val number = ideBuildNumber(ideDir.get().toPath())
+                if (Version.parse(number.split('-').last()) < Version.parse(MIN_BUILD_TO_USE_SPLIT_MODE)) {
+                    throw GradleException("$RUN_IDE_IN_SPLIT_MODE_TASK_NAME is not available in IDE build $number, change intellij.version to $MIN_BUILD_TO_USE_SPLIT_MODE or newer")
+                }
+                
+                val jbrPath = jbrResolver.resolveRuntimeDir(
+                    jbrVersion = jbrVersion.orNull,
+                    jbrVariant = jbrVariant.orNull,
+                    jbrArch = jbrArch.orNull,
+                    ideDir = ideDir.orNull,
+                )
+                if (jbrPath != null) {
+                    /* since JBR is not bundled with IDE distribution used in Gradle projects, we need to specify the 
+                       path which will be used to run the client process explicitly */
+                    environment("JETBRAINS_CLIENT_JDK", jbrPath.pathString)
+                }
+            }
         }
     }
 

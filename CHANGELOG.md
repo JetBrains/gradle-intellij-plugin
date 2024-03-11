@@ -2,6 +2,10 @@
 
 ## [next]
 
+### Added
+
+- Add `runIdeInSplitMode` task which starts separate processes for IDE's backend and frontend parts [#1562](../../issues/1562)
+
 ### Fixed
 
 - Fix for: `coroutinesJavaAgentPath` specifies file `.../build/tmp/initializeIntelliJPlugin/coroutines-javaagent.jar` which doesn't exist

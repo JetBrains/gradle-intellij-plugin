@@ -296,6 +296,8 @@ internal fun Project.checkGradleVersion() {
     }
 }
 
+internal const val MIN_BUILD_TO_USE_SPLIT_MODE = "241.14473"
+
 internal fun getCurrentPluginVersion() = IntelliJPlugin::class.java
     .run { getResource("$simpleName.class") }
     .runCatching {
